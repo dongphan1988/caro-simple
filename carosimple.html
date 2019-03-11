@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>CARO SIMPLE</h1>
+<button type="button" onclick="player1()">Nguoi Choi 1</button>
+<button type="button" onclick="player2()">Nguoi Choi 2</button>
+<p id="hienthi"></p>
+<script>
+    let b =document.getElementById("hienthi");
+    let arr = [];
+    let a = "";
+    for(let i =0;i<5;i++){
+        arr [i] = [0,0,0,0,0];
+        a += "<br/>";
+        for(let j = 0;j<5;j++){
+            a += arr[i][j] + "&nbsp;";
+        }
+    }
+    function player1() {
+        let nhapX = prompt("nhap x");
+        let nhapY = prompt("nhap y");
+        a = "";
+        arr[nhapX][nhapY] = "x";
+        for(let i =0;i<5;i++){
+            a += "<br/>";
+            for(let j = 0;j<5;j++){
+                a += arr[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "<hr/>" + a;
+    }
+    function player2() {
+        let nhapX = prompt("nhap x");
+        let nhapY = prompt("nhap y");
+        a = "";
+        arr[nhapX][nhapY] = "o";
+        for(let i = 0;i<5;i++){
+            a += "<br/>";
+            for(let j = 0;j<5;j++){
+                a += arr[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "<hr/>" + a;
+
+    }
+</script>
+</body>
+</html>
